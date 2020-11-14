@@ -14,8 +14,8 @@ body {
 body:before {
     content: "";
     position: absolute;
-    background: url('https://theysaidso.com/img/qod/qod-inspire.jpg');
-    /* background-color: #272727; */
+    /* background: url('https://theysaidso.com/img/qod/qod-inspire.jpg'); */
+    background-color: #272727;
     background-size: cover;
     z-index: -1; /* Keep the background behind the content */
     height: 20%; width: 20%; /* Using Glen Maddern's trick /via @mente */
