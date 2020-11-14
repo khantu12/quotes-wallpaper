@@ -1,6 +1,6 @@
 const axios = require('axios');
 const pug = require('pug');
-const htmlToImage = require('node-html-to-image');
+const nodeHtmlToImage = require('node-html-to-image');
 const wallpaper = require('wallpaper');
 
 const get_qod = async () => {
@@ -10,12 +10,15 @@ const get_qod = async () => {
 
 const main = async () => {
   const { quote, author } = await get_qod();
-  const compiledHtml = pug.compile('index.pug', { quote, author });
-  await htmlToImage({
-    output: './bg.png',
-    html: compiledHtml
+  const compiledHtml = pug.compileFile('index.pug');
+  nodeHtmlToImage({
+    output: './bg.jpg',
+    type: 'jpeg',
+    quality: 100,
+    html: compiledHtml({quote, author})
+  }).then(() => {
+    wallpaper.set('./bg.jpg');
   });
-  await wallpaper.set('./bg.png');
 }
 
 main();
