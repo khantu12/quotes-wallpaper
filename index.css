@@ -14,30 +14,23 @@ body {
 body:before {
     content: "";
     position: absolute;
-    /* background: url('https://theysaidso.com/img/qod/qod-inspire.jpg'); */
     background-color: #272727;
     background-size: cover;
-    z-index: -1; /* Keep the background behind the content */
-    height: 20%; width: 20%; /* Using Glen Maddern's trick /via @mente */
-
-    /* don't forget to use the prefixes you need */
+    z-index: -1;
+    height: 20%; width: 20%;
     transform: scale(5);
     transform-origin: center;
     filter: blur(10px);
 }
-
 .container {
   font-family: 'Roboto', sans-serif;
   width: calc(100% - 40%);
   text-align: center;
   color: white;
 }
-
 .quote {
   font-size: 5rem;
-  /* font-weight: 100; */
 }
-
 .author {
   margin-top: 30px;
   font-size: 25px;
